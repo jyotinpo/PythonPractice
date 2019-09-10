@@ -18,9 +18,21 @@ import re
 for i in range(int(raw_input())):
     print bool(re.search(r"^[+|-]?\d*\.\d+$",raw_input().strip()))
 
-# Problem - 3
+# Problem-3
 # Find the first occurrence of an alphanumeric character in  (read from left to right) that has consecutive repetitions.
 
 import re
 m = re.search(r'([0-9]|[a-z]|[A-Z])\1+', input().strip())
 print(m.group(1) if m else -1)
+
+# Problem-4 (not from Hackerrank)
+# Validate email address
+
+import re
+string = "abc@xyz.com"
+
+regex = r'([a-z|A-Z|0-9|.|_]+)@([a-z|A-Z|0-9]+)\.([a-z]+)$'
+
+m = re.match(regex, string)
+print(bool(m))
+
